@@ -16,7 +16,7 @@ def gameMenu() :
     
     print('\nHello, welcome to Guess Number!\n')
     print('Ready to play...?')
-    menuChoice = input('Press Y to start game, or X to quit.\n').upper()
+    menuChoice = input('Press Y to start game, or X to quit.\n\n').upper()
 
     if menuChoice == "Y" :
         clearConsole(0)
@@ -26,17 +26,20 @@ def gameMenu() :
         clearConsole(0)
         sys.exit()
 
+    else :
+        gameMenu()
+
 def playGame() :
     """Obtain input from user, check against random number and display output"""
 
     intLower = 0 #default set to 0
     intHigher = 1000 #default set to 1000
+    rndNumber = 0
     
     print('The number will be from an inclusive range of {0} to {1}'.format(intLower, intHigher))
     
     try :
         userGuess = int(input('Please enter your guess: '))
-
     except :
 
         try :
@@ -47,7 +50,18 @@ def playGame() :
             clearConsole(2)
             gameMenu()
 
-    randomNumber(intLower, intHigher)
+    rndNumber = randomNumber(intLower, intHigher)
+
+    while userGuess != rndNumber : 
+        print("Sorry, you didn't guess the number")
+
+        if userGuess < rndNumber :
+            print('Your guess was low')
+            userGuess = int(input("What's your next guess? "))
+
+        if userGuess > rndNumber :
+            print('Your guess was high')
+            userGuess = int(input("What's your next guess? "))
 
 
 def randomNumber(a, b) :
@@ -77,7 +91,7 @@ def clearConsole(wait) : #function to clear console on Linux or Windows
 
 
 def main() : 
-    playGame()
+    gameMenu()
 
 if __name__ == "__main__" :
     main()
