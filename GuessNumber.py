@@ -18,17 +18,24 @@ def gameMenu() :
     print('Ready to play...?')
     menuChoice = input('Press Y to start game, or X to quit.\n\n').upper()
 
-    if menuChoice == "Y" :
+    menuLoop = True
+
+    while menuLoop :
+
         clearConsole(0)
-        playGame()
 
-    elif menuChoice == "X" :
-        clearConsole(0)
-        sys.exit()
+        if menuChoice == "Y" :
+            clearConsole(0)
+            playGame()
 
-    else :
-        gameMenu()
+        elif menuChoice == "X" :
+            clearConsole(0)
+            sys.exit()
 
+        else :
+            gameMenu()
+
+    
 def playGame() :
     """Obtain input from user, check against random number and display output"""
 
