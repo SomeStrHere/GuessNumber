@@ -40,7 +40,7 @@ def playGame() :
     """Obtain input from user, check against random number and display output"""
 
     intLower = 0 #default set to 0
-    intHigher = 1000 #default set to 1000
+    intHigher = 10 #default set to 1000
     rndNumber = 0
     
     print('\nThe number will be from an inclusive range of {0} to {1}'.format(intLower, intHigher))
@@ -88,6 +88,11 @@ def playGame() :
                     print('Sorry, there was an error.')
                     clearConsole(2)
                     gameMenu()
+
+    print('\n\nCongratulations! you guessed the number.')
+    print('Returning you to the menu...')
+    clearConsole(3)
+    gameMenu()
 
 
 def randomNumber(a, b) :
