@@ -64,11 +64,30 @@ def playGame() :
 
         if userGuess < rndNumber :
             print('Your guess was low')
-            userGuess = int(input("What's your next guess? "))
+
+            try : 
+                userGuess = int(input("What's your next guess? "))
+            except : 
+                try : 
+                    userguess = int(input('Sorry, there was an error; please try again: '))
+                except :
+                    print('Sorry, there was an error.')
+                    clearConsole(2)
+                    gameMenu()
+                 
 
         if userGuess > rndNumber :
             print('Your guess was high')
-            userGuess = int(input("What's your next guess? "))
+
+            try : 
+                userGuess = int(input("What's your next guess? "))
+            except : 
+                try : 
+                    userguess = int(input('Sorry, there was an error; please try again: '))
+                except :
+                    print('Sorry, there was an error.')
+                    clearConsole(2)
+                    gameMenu()
 
 
 def randomNumber(a, b) :
