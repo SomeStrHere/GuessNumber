@@ -43,7 +43,7 @@ def playGame() :
     intHigher = 1000 #default set to 1000
     rndNumber = 0
     
-    print('The number will be from an inclusive range of {0} to {1}'.format(intLower, intHigher))
+    print('\nThe number will be from an inclusive range of {0} to {1}'.format(intLower, intHigher))
     
     try :
         userGuess = int(input('Please enter your guess: '))
@@ -60,16 +60,16 @@ def playGame() :
     rndNumber = randomNumber(intLower, intHigher)
 
     while userGuess != rndNumber : 
-        print("Sorry, you didn't guess the number")
+        print("\nSorry, you didn't guess the number")
 
         if userGuess < rndNumber :
             print('Your guess was low')
 
             try : 
-                userGuess = int(input("What's your next guess? "))
+                userGuess = int(input("\nWhat's your next guess? "))
             except : 
                 try : 
-                    userguess = int(input('Sorry, there was an error; please try again: '))
+                    userguess = int(input('\nSorry, there was an error; please try again: '))
                 except :
                     print('Sorry, there was an error.')
                     clearConsole(2)
@@ -83,7 +83,7 @@ def playGame() :
                 userGuess = int(input("What's your next guess? "))
             except : 
                 try : 
-                    userguess = int(input('Sorry, there was an error; please try again: '))
+                    userguess = int(input('\nSorry, there was an error; please try again: '))
                 except :
                     print('Sorry, there was an error.')
                     clearConsole(2)
