@@ -7,6 +7,7 @@
 #
 
 
+import sys
 from random import randint
 
 
@@ -15,7 +16,15 @@ def gameMenu() :
     
     print('\nHello, welcome to Guess Number!\n')
     print('Ready to play...?')
-    menuChoice = input('Press Y to start game, or X to quit.\n')
+    menuChoice = input('Press Y to start game, or X to quit.\n').upper()
+
+    if menuChoice == "Y" :
+        clearConsole(0)
+        playGame()
+
+    elif menuChoice == "X" :
+        clearConsole(0)
+        sys.exit()
 
 def playGame() :
     """Obtain input from user, check against random number and display output"""
