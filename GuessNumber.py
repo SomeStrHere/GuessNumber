@@ -29,8 +29,23 @@ def gameMenu() :
 def playGame() :
     """Obtain input from user, check against random number and display output"""
 
-    intLower = 0
-    intHigher = 0
+    intLower = 0 #default set to 0
+    intHigher = 1000 #default set to 1000
+    
+    print('The number will be from an inclusive range of {0} to {1}'.format(intLower, intHigher))
+    
+    try :
+        userGuess = int(input('Please enter your guess: '))
+
+    except :
+
+        try :
+            userguess = int(input('There was an error! Please enter a whole number from the range {0} - {1}\
+            '.format(intLower, intHigher)))
+        except :
+            print('Sorry, there was an error.')
+            clearConsole(2)
+            gameMenu()
 
     randomNumber(intLower, intHigher)
 
@@ -62,7 +77,7 @@ def clearConsole(wait) : #function to clear console on Linux or Windows
 
 
 def main() : 
-    pass #TODO
+    playGame()
 
 if __name__ == "__main__" :
     main()
