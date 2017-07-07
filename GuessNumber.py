@@ -3,7 +3,7 @@
 #This program will randomly generate a number, and ask the user to attempt to guess that number. The
 #program will inform the user if their guess is low or high.
 #
-#Version 0.0.1
+#Version 1.0.0
 #
 
 
